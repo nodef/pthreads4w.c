@@ -41,7 +41,7 @@
 /* See the README file for an explanation of the pthreads-win32
  * version numbering scheme and how the DLL is named etc.
  *
- * FIXME: consider moving this to <_ptw32.h>; maybe also add a
+ * FIXME: consider moving this to "_ptw32.h"; maybe also add a
  * leading underscore to the macro names.
  */
 #define  __PTW32_VERSION_MAJOR 3

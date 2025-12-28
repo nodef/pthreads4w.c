@@ -40,7 +40,7 @@
 # error "config.h was not #included"
 #endif
 
-#include <_ptw32.h>
+#include "_ptw32.h"
 
 #if !defined(_WIN32_WINNT)
 # define _WIN32_WINNT 0x0400

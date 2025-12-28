@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -72,7 +72,7 @@ pthread_mutexattr_settype (pthread_mutexattr_t * attr, int kind)
       * get the mutex type  attribute. This attribute is set in  the
       * type  parameter to these functions. The default value of the
       * type  attribute is  PTHREAD_MUTEX_DEFAULT.
-      * 
+      *
       * The type of mutex is contained in the type  attribute of the
       * mutex attributes. Valid mutex types include:
       *
@@ -84,7 +84,7 @@ pthread_mutexattr_settype (pthread_mutexattr_t * attr, int kind)
       *          results  in  undefined  behavior.  Attempting   to
       *          unlock  an  unlocked  mutex  results  in undefined
       *          behavior.
-      * 
+      *
       * PTHREAD_MUTEX_ERRORCHECK
       *          This type of  mutex  provides  error  checking.  A
       *          thread  attempting  to  relock  this mutex without
@@ -96,7 +96,7 @@ pthread_mutexattr_settype (pthread_mutexattr_t * attr, int kind)
       *
       * PTHREAD_MUTEX_DEFAULT
       *          Same as PTHREAD_MUTEX_NORMAL.
-      * 
+      *
       * PTHREAD_MUTEX_RECURSIVE
       *          A thread attempting to relock this  mutex  without
       *          first  unlocking  it  will  succeed in locking the

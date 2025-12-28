@@ -37,7 +37,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -47,7 +47,7 @@
 /*
  * The functions __ptw32_pop_cleanup and __ptw32_push_cleanup
  * are implemented here for applications written in C with no
- * SEH or C++ destructor support. 
+ * SEH or C++ destructor support.
  */
 
 __ptw32_cleanup_t *

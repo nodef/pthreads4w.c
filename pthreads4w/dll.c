@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -164,4 +164,3 @@ static int (*msc_dtor)(void) = on_process_exit;
 void __ptw32_autostatic_anchor(void) { abort(); }
 
 #endif /*  __PTW32_STATIC_LIB */
-

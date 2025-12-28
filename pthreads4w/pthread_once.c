@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -46,7 +46,7 @@ pthread_once (pthread_once_t * once_control, void  (__PTW32_CDECL *init_routine)
     {
       return EINVAL;
     }
-  
+
   if  ((__PTW32_INTERLOCKED_LONG)__PTW32_FALSE ==
        (__PTW32_INTERLOCKED_LONG)__PTW32_INTERLOCKED_EXCHANGE_ADD_LONG ((__PTW32_INTERLOCKED_LONGPTR)&once_control->done,
                                                                    (__PTW32_INTERLOCKED_LONG)0)) /* MBR fence */

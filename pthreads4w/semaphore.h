@@ -52,10 +52,10 @@
 #define _POSIX_SEMAPHORES
 
 /* Internal macros, common to the public interfaces for various
- * pthreads-win32 components, are defined in <_ptw32.h>; we must
+ * pthreads-win32 components, are defined in "_ptw32.h"; we must
  * include them here.
  */
-#include <_ptw32.h>
+#include "_ptw32.h"
 
 /* The sem_timedwait() function was added in POSIX.1-2001; it
  * requires struct timespec to be defined, at least as a partial

@@ -34,7 +34,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -46,7 +46,7 @@ __ptw32_tkAssocCreate (__ptw32_thread_t * sp, pthread_key_t key)
      /*
       * -------------------------------------------------------------------
       * This routine creates an association that
-      * is unique for the given (thread,key) combination.The association 
+      * is unique for the given (thread,key) combination.The association
       * is referenced by both the thread and the key.
       * This association allows us to determine what keys the
       * current thread references and what threads a given key
@@ -59,7 +59,7 @@ __ptw32_tkAssocCreate (__ptw32_thread_t * sp, pthread_key_t key)
       *              chain so that the internal __ptw32_selfThreadKey association
       *              is always last, thus allowing selfThreadExit to
       *              be implicitly called last by pthread_exit.
-      *      2)      
+      *      2)
       *
       * Parameters:
       *              thread

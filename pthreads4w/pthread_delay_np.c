@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -48,26 +48,26 @@
  *       This period ends at the current time plus the specified interval. The routine
  *       will not return before the end of the period is reached, but may return an
  *       arbitrary amount of time after the period has gone by. This can be due to
- *       system load, thread priorities, and system timer granularity. 
+ *       system load, thread priorities, and system timer granularity.
  *
  *       Specifying an interval of zero (0) seconds and zero (0) nanoseconds is
  *       allowed and can be used to force the thread to give up the processor or to
- *       deliver a pending cancellation request. 
+ *       deliver a pending cancellation request.
  *
- *       The timespec structure contains the following two fields: 
+ *       The timespec structure contains the following two fields:
  *
- *            tv_sec is an integer number of seconds. 
- *            tv_nsec is an integer number of nanoseconds. 
+ *            tv_sec is an integer number of seconds.
+ *            tv_nsec is an integer number of nanoseconds.
  *
  *  Return Values
  *
  *  If an error condition occurs, this routine returns an integer value indicating
- *  the type of error. Possible return values are as follows: 
+ *  the type of error. Possible return values are as follows:
  *
- *  0 
+ *  0
  *           Successful completion.
- *  [EINVAL] 
- *           The value specified by interval is invalid. 
+ *  [EINVAL]
+ *           The value specified by interval is invalid.
  *
  * Example
  *

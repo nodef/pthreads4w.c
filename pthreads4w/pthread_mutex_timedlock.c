@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -80,8 +80,8 @@ __ptw32_timed_eventwait (HANDLE event, const struct timespec *abstime)
 	}
       else
 	{
-	  /* 
-	   * Calculate timeout as milliseconds from current system time. 
+	  /*
+	   * Calculate timeout as milliseconds from current system time.
 	   */
 	  milliseconds = __ptw32_relmillisecs (abstime);
 	}

@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -46,7 +46,7 @@ pthread_getspecific (pthread_key_t key)
       * ------------------------------------------------------
       * DOCPUBLIC
       *      This function returns the current value of key in the
-      *      calling thread. If no value has been set for 'key' in 
+      *      calling thread. If no value has been set for 'key' in
       *      the thread, NULL is returned.
       *
       * PARAMETERS
@@ -56,7 +56,7 @@ pthread_getspecific (pthread_key_t key)
       *
       * DESCRIPTION
       *      This function returns the current value of key in the
-      *      calling thread. If no value has been set for 'key' in 
+      *      calling thread. If no value has been set for 'key' in
       *      the thread, NULL is returned.
       *
       * RESULTS

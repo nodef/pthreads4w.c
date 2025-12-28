@@ -1,6 +1,6 @@
 /*
  * sched_get_priority_max.c
- * 
+ *
  * Description:
  * POSIX thread functions that deal with thread scheduling.
  *
@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -41,13 +41,13 @@
 #include "sched.h"
 
 /*
- * On Windows98, THREAD_PRIORITY_LOWEST is (-2) and 
+ * On Windows98, THREAD_PRIORITY_LOWEST is (-2) and
  * THREAD_PRIORITY_HIGHEST is 2, and everything works just fine.
- * 
+ *
  * On WinCE 3.0, it so happen that THREAD_PRIORITY_LOWEST is 5
  * and THREAD_PRIORITY_HIGHEST is 1 (yes, I know, it is funny:
  * highest priority use smaller numbers) and the following happens:
- * 
+ *
  * sched_get_priority_min() returns 5
  * sched_get_priority_max() returns 1
  *

@@ -34,7 +34,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -109,7 +109,7 @@ pthread_join (pthread_t thread, void **value_ptr)
 
   if (result == 0)
     {
-      /* 
+      /*
        * The target thread is joinable and can't be reused before we join it.
        */
       self = pthread_self();

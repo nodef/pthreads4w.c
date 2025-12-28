@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #if !defined(_UWIN)
@@ -162,7 +162,7 @@ pthread_mutex_lock (pthread_mutex_t * mutex)
           pthread_t self = pthread_self();
 
           kind = -kind - 1; /* Convert to non-robust range */
-    
+
           if (PTHREAD_MUTEX_NORMAL == kind)
             {
               if  ((__PTW32_INTERLOCKED_LONG)  __PTW32_INTERLOCKED_EXCHANGE_LONG(
@@ -268,4 +268,3 @@ pthread_mutex_lock (pthread_mutex_t * mutex)
 
   return (result);
 }
-

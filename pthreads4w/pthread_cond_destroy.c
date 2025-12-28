@@ -34,7 +34,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -73,7 +73,7 @@ pthread_cond_destroy (pthread_cond_t * cond)
       *                        ...
       *                      }
       *
-      *                      
+      *
       *                      struct elt *
       *                      list_find(struct list *lp, key k)
       *                      {
@@ -154,7 +154,7 @@ pthread_cond_destroy (pthread_cond_t * cond)
 	      (void) sem_post (&(cv->semBlockLock));
 	    }
 	}
-	
+
       if (result != 0)
         {
           __ptw32_mcs_lock_release(&node);

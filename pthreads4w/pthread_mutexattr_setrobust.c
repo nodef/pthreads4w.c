@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -55,7 +55,7 @@ pthread_mutexattr_setrobust (pthread_mutexattr_t * attr, int robust)
       *      attr
       *              pointer to an instance of pthread_mutexattr_t
       *
-      *     robust 
+      *     robust
       *              must be one of:
       *
       *                      PTHREAD_MUTEX_STALLED
@@ -68,7 +68,7 @@ pthread_mutexattr_setrobust (pthread_mutexattr_t * attr, int robust)
       * get the mutex robust  attribute. This attribute is set in  the
       * robust  parameter to these functions. The default value of the
       * robust  attribute is  PTHREAD_MUTEX_STALLED.
-      * 
+      *
       * The robustness of mutex is contained in the robustness attribute
       * of the mutex attributes. Valid mutex robustness values are:
       *
@@ -77,7 +77,7 @@ pthread_mutexattr_setrobust (pthread_mutexattr_t * attr, int robust)
       * terminated while holding the mutex lock. This can lead to
       * deadlocks if no other thread can unlock the mutex.
       * This is the default value.
-      * 
+      *
       * PTHREAD_MUTEX_ROBUST
       * If the process containing the owning thread of a robust mutex
       * terminates while holding the mutex lock, the next thread that

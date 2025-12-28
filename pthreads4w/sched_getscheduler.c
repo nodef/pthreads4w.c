@@ -1,6 +1,6 @@
 /*
  * sched_getscheduler.c
- * 
+ *
  * Description:
  * POSIX thread functions that deal with thread scheduling.
  *
@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"

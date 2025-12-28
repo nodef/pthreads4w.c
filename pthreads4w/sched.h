@@ -38,9 +38,9 @@
 #define _SCHED_H
 #define __SCHED_H_SOURCED__
 
-#include <_ptw32.h>
+#include "_ptw32.h"
 
-/* We need a typedef for pid_t, (and POSIX requires <sched.h> to
+/* We need a typedef for pid_t, (and POSIX requires "sched.h" to
  * define it, as it is defined in <sys/types.h>, but it does NOT
  * sanction exposure of everything from <sys/types.h>); there is
  * no pid_t in Windows anyway, (except that MinGW does define it
@@ -66,7 +66,7 @@
 #endif
 #endif
 
-/* POSIX.1-1993 says that <sched.h> WILL expose all of <time.h>
+/* POSIX.1-1993 says that "sched.h" WILL expose all of <time.h>
  */
 #undef __SCHED_H_SOURCED__
 #if _POSIX_C_SOURCE >= 200112L

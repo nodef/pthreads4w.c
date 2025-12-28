@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -148,7 +148,7 @@ pthread_mutex_trylock (pthread_mutex_t * mutex)
               else
                 {
                   if (0 == result)
-                    { 
+                    {
 	              result = EBUSY;
                     }
                 }

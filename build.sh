@@ -40,10 +40,12 @@ echo ""
 
 # Test the project
 test() {
-echo "Running 01-basic-rendering.c ..."
-clang -I. -o 01.exe examples/01-basic-rendering.c  && ./01.exe && echo -e "\n"
-echo "Running 02-advanced-texture.c ..."
-clang -I. -o 02.exe examples/02-advanced-texture.c  && ./02.exe && echo -e "\n"
+echo "Running 01-thread-creation.c ..."
+clang -I. -o 01.exe examples/01-thread-creation.c      && ./01.exe && echo -e "\n"
+echo "Running 02-mutex-locking.c ..."
+clang -I. -o 02.exe examples/02-mutex-locking.c        && ./02.exe && echo -e "\n"
+echo "Running 03-condition-variables.c ..."
+clang -I. -o 03.exe examples/03-condition-variables.c  && ./03.exe && echo -e "\n"
 }
 
 

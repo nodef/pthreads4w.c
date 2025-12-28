@@ -34,7 +34,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -80,4 +80,3 @@ __ptw32_threadDestroy (pthread_t thread)
 
     }
 }				/* __ptw32_threadDestroy */
-

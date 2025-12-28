@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -50,7 +50,7 @@ __ptw32_cancelable_wait (HANDLE waitHandle, DWORD timeout)
       * signalled or pthread_cancel has been called. It is implemented using
       * WaitForMultipleObjects on 'waitHandle' and a manually reset WIN32
       * event used to implement pthread_cancel.
-      * 
+      *
       * Given this hook it would be possible to implement more of the cancellation
       * points.
       * -------------------------------------------------------------------

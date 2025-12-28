@@ -41,7 +41,7 @@
  * algorithm used here is the one referred to as
  *
  *     Algorithm 8a / IMPL_SEM,UNBLOCK_STRATEGY == UNBLOCK_ALL
- * 
+ *
  * presented below in pseudo-code as it appeared:
  *
  *
@@ -53,20 +53,20 @@
  * nWaitersGone - int
  * nWaitersBlocked - int
  * nWaitersToUnblock - int
- * 
+ *
  * wait( timeout ) {
- * 
+ *
  *   [auto: register int result          ]     // error checking omitted
  *   [auto: register int nSignalsWasLeft ]
  *   [auto: register int nWaitersWasGone ]
- * 
+ *
  *   sem_wait( semBlockLock );
  *   nWaitersBlocked++;
  *   sem_post( semBlockLock );
- * 
+ *
  *   unlock( mtxExternal );
  *   bTimedOut = sem_wait( semBlockQueue,timeout );
- * 
+ *
  *   lock( mtxUnblockLock );
  *   if ( 0 != (nSignalsWasLeft = nWaitersToUnblock) ) {
  *     if ( bTimeout ) {                       // timeout (or canceled)
@@ -97,7 +97,7 @@
  *     nWaitersGone = 0;
  *   }
  *   unlock( mtxUnblockLock );
- * 
+ *
  *   if ( 1 == nSignalsWasLeft ) {
  *     if ( 0 != nWaitersWasGone ) {
  *       // sem_adjust( semBlockQueue,-nWaitersWasGone );
@@ -106,19 +106,19 @@
  *       }
  *     } sem_post( semBlockLock );          // open the gate
  *   }
- * 
+ *
  *   lock( mtxExternal );
- * 
+ *
  *   return ( bTimedOut ) ? ETIMEOUT : 0;
  * }
- * 
+ *
  * signal(bAll) {
- * 
+ *
  *   [auto: register int result         ]
  *   [auto: register int nSignalsToIssue]
- * 
+ *
  *   lock( mtxUnblockLock );
- * 
+ *
  *   if ( 0 != nWaitersToUnblock ) {        // the gate is closed!!!
  *     if ( 0 == nWaitersBlocked ) {        // NO-OP
  *       return unlock( mtxUnblockLock );
@@ -151,7 +151,7 @@
  *   else { // NO-OP
  *     return unlock( mtxUnblockLock );
  *   }
- * 
+ *
  *   unlock( mtxUnblockLock );
  *   sem_post( semBlockQueue,nSignalsToIssue );
  *   return result;
@@ -159,7 +159,7 @@
  * -------------------------------------------------------------
  *
  *     Algorithm 9 / IMPL_SEM,UNBLOCK_STRATEGY == UNBLOCK_ALL
- * 
+ *
  * presented below in pseudo-code; basically 8a...
  *                                      ...BUT W/O "spurious wakes" prevention:
  *
@@ -172,19 +172,19 @@
  * nWaitersGone - int
  * nWaitersBlocked - int
  * nWaitersToUnblock - int
- * 
+ *
  * wait( timeout ) {
- * 
+ *
  *   [auto: register int result          ]     // error checking omitted
  *   [auto: register int nSignalsWasLeft ]
- * 
+ *
  *   sem_wait( semBlockLock );
  *   ++nWaitersBlocked;
  *   sem_post( semBlockLock );
- * 
+ *
  *   unlock( mtxExternal );
  *   bTimedOut = sem_wait( semBlockQueue,timeout );
- * 
+ *
  *   lock( mtxUnblockLock );
  *   if ( 0 != (nSignalsWasLeft = nWaitersToUnblock) ) {
  *     --nWaitersToUnblock;
@@ -198,23 +198,23 @@
  *     nWaitersGone = 0;
  *   }
  *   unlock( mtxUnblockLock );
- * 
+ *
  *   if ( 1 == nSignalsWasLeft ) {
  *     sem_post( semBlockLock );               // open the gate
  *   }
- * 
+ *
  *   lock( mtxExternal );
- * 
+ *
  *   return ( bTimedOut ) ? ETIMEOUT : 0;
  * }
- * 
+ *
  * signal(bAll) {
- * 
+ *
  *   [auto: register int result         ]
  *   [auto: register int nSignalsToIssue]
- * 
+ *
  *   lock( mtxUnblockLock );
- * 
+ *
  *   if ( 0 != nWaitersToUnblock ) {        // the gate is closed!!!
  *     if ( 0 == nWaitersBlocked ) {        // NO-OP
  *       return unlock( mtxUnblockLock );
@@ -256,7 +256,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #include "pthread.h"
@@ -484,11 +484,11 @@ pthread_cond_wait (pthread_cond_t * cond, pthread_mutex_t * mutex)
       *
       *      2)      This routine atomically releases 'mutex' and causes
       *              the calling thread to block on the condition variable.
-      *              The blocked thread may be awakened by 
-      *                      pthread_cond_signal or 
+      *              The blocked thread may be awakened by
+      *                      pthread_cond_signal or
       *                      pthread_cond_broadcast.
       *
-      * Upon successful completion, the 'mutex' has been locked and 
+      * Upon successful completion, the 'mutex' has been locked and
       * is owned by the calling thread.
       *
       *
@@ -543,8 +543,8 @@ pthread_cond_timedwait (pthread_cond_t * cond,
       *
       *      2)      This routine atomically releases 'mutex' and causes
       *              the calling thread to block on the condition variable.
-      *              The blocked thread may be awakened by 
-      *                      pthread_cond_signal or 
+      *              The blocked thread may be awakened by
+      *                      pthread_cond_signal or
       *                      pthread_cond_broadcast.
       *
       *

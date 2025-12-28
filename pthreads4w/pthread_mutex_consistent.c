@@ -33,7 +33,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 /*
@@ -189,4 +189,3 @@ pthread_mutex_consistent (pthread_mutex_t* mutex)
 
   return (result);
 }
-
