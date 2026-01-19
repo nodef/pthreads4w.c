@@ -1,6 +1,6 @@
 {
   "name": "pthreads4w.c",
-  "version": "1.2024.3",
+  "version": "1.2024.4",
   "description": "POSIX threads API for Windows from https://sourceforge.net/p/pthreads4w; Ben Elliston (1998).",
   "keywords": [
     "c",
